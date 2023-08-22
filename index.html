@@ -12,15 +12,17 @@
 
         <div class="header">
             <h4>select size</h4>
-            <button id="popup" class="btn btn-success">Select</button>
+            <button id="popup" class="btn btn-success" >Select</button>
         </div>
+
+        <p id="message"></p>
 
         <div class="board"></div>
 
         <div class="footer">
-            <button  class="btn btn-dark">Black</button>
-            <button class="btn btn-danger">Random</button>
-            <button class="btn btn-info">Reset</button>
+            <button  class="btn btn-dark" onclick="setColor('black')">Black</button>
+            <button class="btn btn-danger" onclick="setColor('random')">Random</button>
+            <button class="btn btn-info" onclick="reset()">Reset</button>
         </div>
     
 
