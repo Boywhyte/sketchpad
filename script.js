@@ -1,7 +1,15 @@
 let color = 'black'
-
+let click = false
 
 document.addEventListener("DOMContentLoaded",function(){
+
+    document.querySelector('.board').addEventListener('click', function(e){
+        if(e.target){
+            click =!click
+        }
+    })
+
+
     createBoard(16)
     let select = document.getElementById('popup')
     select.addEventListener('click',function(){
@@ -37,17 +45,20 @@ function getSize(){
         message.textContent='Invalid number. Please enter a number from 1-100.'
     }
     else{
-        message.innerHTML = 'play'
+        message.innerHTML = 'click to draw'
         return input
     }
 }
 
 function colorDiv(){
-    if(color == 'random'){
-        this.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`
-    }
-    else{
-        this.style.backgroundColor = 'black'
+    if(click){
+
+        if(color == 'random'){
+            this.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`
+        }
+        else{
+            this.style.backgroundColor = 'black'
+        }
     }
 }
 function setColor(colorChoice){
